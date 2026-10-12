@@ -1,0 +1,22 @@
+<table  
+     border="1">
+     <tr>
+        <th> name </th>
+        <th> age</th>
+        <th> branch</th>
+
+        
+     </tr>
+     <td> yash thakur </td>
+     
+     <td> 18</td>
+     <td> cse </td>
+    
+
+
+</table>         
+
+
+
+
+

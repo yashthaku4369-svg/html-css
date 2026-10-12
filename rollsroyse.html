@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blush Estate — Pink Rolls Royce at the Mansion</title>
+<style>
+  :root {
+    --sky-top: #2b1f3d;
+    --sky-mid: #7a4f6b;
+    --sky-low: #e8a793;
+    --mansion: #3a2f45;
+    --mansion-dark: #241c2c;
+    --window-glow: #ffd98a;
+    --car-pink: #f0a8c0;
+    --car-pink-dark: #d97fa0;
+    --car-pink-light: #fbd4e2;
+    --chrome: #f2f2f2;
+    --ground: #4a3550;
+    --cream: #f7ede9;
+    --text-dark: #241c2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text-dark);
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 640px;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-low) 100%);
+  }
+
+  .scene-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 8%;
+    left: 6%;
+    z-index: 10;
+    max-width: 480px;
+  }
+
+  .hero-text .eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--window-glow);
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    color: #fff;
+    font-weight: 400;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .hero-text p {
+    margin-top: 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #f0e6e0;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  .content h2 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+  }
+
+  .content p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #4a4048;
+    max-width: 65ch;
+    margin-bottom: 1.4rem;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--car-pink-dark);
+    margin: 2.2rem 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #8a7f85;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">BLUSH ESTATE</div>
+    <h1>An evening arrival, in rose gold.</h1>
+    <p>The Rolls Royce waits at the foot of the manor, chrome catching the last light of dusk.</p>
+  </div>
+
+  <svg class="scene-svg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- moon -->
+    <circle cx="1040" cy="110" r="46" fill="#fdf3d8" opacity="0.9"/>
+    <circle cx="1040" cy="110" r="46" fill="#fdf3d8" opacity="0.3">
+      <animate attributeName="r" values="46;52;46" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- distant hills -->
+    <path d="M0,480 Q200,440 400,470 T800,460 T1200,480 L1200,700 L0,700 Z" fill="#5c3f5a" opacity="0.55"/>
+
+    <!-- ground -->
+    <rect x="0" y="560" width="1200" height="140" fill="var(--ground)"/>
+
+    <!-- driveway -->
+    <path d="M150,700 L420,560 L780,560 L1050,700 Z" fill="#3a2a3d"/>
+    <path d="M480,700 L560,560 L640,560 L560,700 Z" fill="#4d3950" opacity="0.6"/>
+
+    <!-- hedges -->
+    <ellipse cx="120" cy="565" rx="90" ry="34" fill="#2f3d33"/>
+    <ellipse cx="1080" cy="565" rx="90" ry="34" fill="#2f3d33"/>
+
+    <!-- === MANSION === -->
+    <g>
+      <!-- main block -->
+      <rect x="330" y="300" width="540" height="270" fill="var(--mansion)"/>
+      <!-- roofline -->
+      <polygon points="310,300 890,300 860,250 340,250" fill="var(--mansion-dark)"/>
+      <!-- side wings -->
+      <rect x="230" y="360" width="110" height="210" fill="var(--mansion-dark)"/>
+      <rect x="860" y="360" width="110" height="210" fill="var(--mansion-dark)"/>
+
+      <!-- center pediment -->
+      <polygon points="520,250 680,250 600,190" fill="var(--mansion-dark)"/>
+
+      <!-- columns -->
+      <g fill="#eee3da">
+        <rect x="480" y="330" width="16" height="240"/>
+        <rect x="540" y="330" width="16" height="240"/>
+        <rect x="600" y="330" width="16" height="240"/>
+        <rect x="660" y="330" width="16" height="240"/>
+        <rect x="700" y="330" width="16" height="240"/>
+      </g>
+      <rect x="470" y="320" width="260" height="14" fill="#eee3da"/>
+
+      <!-- windows main block, lit -->
+      <g fill="var(--window-glow)" opacity="0.9">
+        <rect x="360" y="330" width="36" height="50" rx="2"/>
+        <rect x="360" y="400" width="36" height="50" rx="2"/>
+        <rect x="360" y="470" width="36" height="50" rx="2"/>
+
+        <rect x="800" y="330" width="36" height="50" rx="2"/>
+        <rect x="800" y="400" width="36" height="50" rx="2"/>
+        <rect x="800" y="470" width="36" height="50" rx="2"/>
+      </g>
+
+      <!-- wing windows -->
+      <g fill="var(--window-glow)" opacity="0.75">
+        <rect x="255" y="390" width="26" height="38" rx="2"/>
+        <rect x="255" y="450" width="26" height="38" rx="2"/>
+        <rect x="290" y="390" width="26" height="38" rx="2"/>
+        <rect x="290" y="450" width="26" height="38" rx="2"/>
+
+        <rect x="885" y="390" width="26" height="38" rx="2"/>
+        <rect x="885" y="450" width="26" height="38" rx="2"/>
+        <rect x="920" y="390" width="26" height="38" rx="2"/>
+        <rect x="920" y="450" width="26" height="38" rx="2"/>
+      </g>
+
+      <!-- grand entrance door -->
+      <rect x="578" y="470" width="64" height="100" rx="4" fill="#241c2c"/>
+      <rect x="578" y="470" width="64" height="100" rx="4" fill="var(--window-glow)" opacity="0.15"/>
+
+      <!-- entrance steps -->
+      <rect x="560" y="568" width="100" height="10" fill="#c9bcb0"/>
+      <rect x="545" y="578" width="130" height="10" fill="#b8aa9d"/>
+    </g>
+
+    <!-- lamp posts -->
+    <g>
+      <rect x="405" y="500" width="6" height="70" fill="#1e1720"/>
+      <circle cx="408" cy="495" r="10" fill="var(--window-glow)" opacity="0.9"/>
+      <rect x="855" y="500" width="6" height="70" fill="#1e1720"/>
+      <circle cx="858" cy="495" r="10" fill="var(--window-glow)" opacity="0.9"/>
+    </g>
+
+    <!-- === PINK ROLLS ROYCE (side profile) === -->
+    <g transform="translate(430,595)">
+      <!-- soft shadow -->
+      <ellipse cx="180" cy="98" rx="230" ry="16" fill="#000" opacity="0.35"/>
+
+      <!-- lower body -->
+      <path d="M10,70
+               C10,40 40,18 80,18
+               L120,18
+               C135,-8 170,-26 215,-26
+               L330,-26
+               C365,-26 385,-6 392,18
+               L430,18
+               C460,18 480,38 480,64
+               L480,80
+               C480,90 470,96 458,96
+               L28,96
+               C16,96 10,88 10,78 Z"
+            fill="var(--car-pink)" stroke="var(--car-pink-dark)" stroke-width="3"/>
+
+      <!-- cabin glass -->
+      <path d="M150,16
+               C160,-4 185,-18 218,-18
+               L318,-18
+               C345,-18 360,-2 366,16 Z"
+            fill="#cfe4ea" opacity="0.85"/>
+      <!-- glass divider -->
+      <line x1="258" y1="-19" x2="256" y2="16" stroke="var(--car-pink-dark)" stroke-width="2"/>
+
+      <!-- pink upper trim / roofline highlight -->
+      <path d="M120,18 L392,18" stroke="var(--car-pink-dark)" stroke-width="3" fill="none"/>
+
+      <!-- chrome grille (Rolls-Royce front) -->
+      <rect x="435" y="30" width="10" height="46" rx="2" fill="var(--chrome)"/>
+      <!-- Spirit of Ecstasy hint -->
+      <circle cx="440" cy="20" r="4" fill="var(--chrome)"/>
+      <rect x="438" y="10" width="4" height="12" fill="var(--chrome)"/>
+
+      <!-- chrome front bumper -->
+      <rect x="425" y="78" width="45" height="8" rx="3" fill="var(--chrome)"/>
+      <!-- chrome rear bumper -->
+      <rect x="10" y="78" width="45" height="8" rx="3" fill="var(--chrome)"/>
+
+      <!-- door line -->
+      <line x1="260" y1="20" x2="260" y2="94" stroke="var(--car-pink-dark)" stroke-width="2"/>
+      <!-- handle -->
+      <rect x="230" y="46" width="18" height="5" rx="2" fill="var(--chrome)"/>
+      <rect x="330" y="46" width="18" height="5" rx="2" fill="var(--chrome)"/>
+
+      <!-- headlight -->
+      <circle cx="452" cy="52" r="9" fill="#fff6da"/>
+      <circle cx="452" cy="52" r="9" fill="none" stroke="var(--chrome)" stroke-width="2"/>
+      <!-- taillight -->
+      <circle cx="30" cy="55" r="7" fill="#e34d5b"/>
+
+      <!-- rocker panel shine -->
+      <path d="M60,90 L420,90" stroke="var(--car-pink-light)" stroke-width="3" opacity="0.6"/>
+
+      <!-- wheels -->
+      <circle cx="110" cy="98" r="34" fill="#1c1c1c"/>
+      <circle cx="110" cy="98" r="16" fill="var(--chrome)"/>
+      <circle cx="110" cy="98" r="5" fill="#8a8a8a"/>
+
+      <circle cx="390" cy="98" r="34" fill="#1c1c1c"/>
+      <circle cx="390" cy="98" r="16" fill="var(--chrome)"/>
+      <circle cx="390" cy="98" r="5" fill="#8a8a8a"/>
+    </g>
+
+  </svg>
+</section>
+
+<main class="content">
+  <h2>Built entirely in HTML &amp; CSS</h2>
+  <p>
+    This page doesn't load any outside image files — the mansion and the pink
+    Rolls Royce are hand-drawn using inline SVG shapes (rectangles, polygons,
+    paths, and circles) styled with CSS variables for the color palette. That
+    makes it a great file to open in VS Code and experiment with: try changing
+    the values under <code>:root</code> to shift the whole mood of the scene,
+    or nudge the numbers inside the <code>&lt;svg&gt;</code> block to reshape
+    the car and building.
+  </p>
+
+  <div class="divider"></div>
+
+  <h2>Things to try next</h2>
+  <p>
+    Change <code>--car-pink</code> to a different hex code and watch the car
+    repaint itself instantly. Try adjusting the <code>viewBox</code> numbers
+    on the <code>&lt;svg&gt;</code> element to zoom in or out of the scene.
+    You can also swap this hand-drawn illustration for a real photo later by
+    replacing the whole <code>&lt;svg&gt;</code> block with an
+    <code>&lt;img src="your-photo.jpg"&gt;</code> tag once you have an image
+    file saved in your project folder.
+  </p>
+</main>
+
+<footer>
+  Built with HTML, CSS &amp; inline SVG — no external images required.
+</footer>
+
+</body>
+</html>
