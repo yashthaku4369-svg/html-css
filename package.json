@@ -1,0 +1,26 @@
+{
+  "name": "first-class-aws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashthaku4369-svg/html-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yashthaku4369-svg/html-css/issues"
+  },
+  "homepage": "https://github.com/yashthaku4369-svg/html-css#readme",
+  "dependencies": {
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "openai": "^7.32.0"
+  }
+}

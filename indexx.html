@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AI Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #212121;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .chat {
+      width: 90%;
+      max-width: 600px;
+      background: #303030;
+      padding: 20px;
+      border-radius: 15px;
+    }
+    #messages {
+      height: 350px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      white-space: pre-wrap;
+    }
+    input {
+      width: 72%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      padding: 12px;
+      background: #10a37f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat">
+    <h2>My AI Chatbot 🤖</h2>
+    <div id="messages">Hello! Ask me anything.</div>
+    <input id="message" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("message");
+      const messages = document.getElementById("messages");
+      const message = input.value.trim();
+
+      if (!message) return;
+
+      messages.textContent += "\n\nYou: " + message;
+      input.value = "";
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+
+        messages.textContent += "\n\nAI: " +
+          (data.reply || data.error || "No response received.");
+      } catch (error) {
+        messages.textContent += "\n\nError: Could not connect to server.";
+      }
+
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+</body>
+</html>
